@@ -43,7 +43,7 @@ jobs:
                           mingw-w64-i686-ninja
                     - name: Windows 64bits (MSYS2)
                       os: windows-latest
-                      compiler: MINGW64
+                      compiler: CLANG64
                       args: -DUSE_EXPERIMENTAL=ON -march=native -mtune=native -O3 -flto=auto -DUSE_EXPERIMENTAL_PRINTER=OFF -DUSE_EXPERIMENTAL_PGC=ON -DUSE_NETWORKING=OFF -DUSE_PCAP_NETWORKING=ON -DCMAKE_BUILD_TYPE=Release -DPCEM_VERSION_STRING="vNext build ${GITHUB_SHA::8}"
                       artifacts_name: PCem-vNext-Windows-MINGW64-${{ github.run_number }}
                       artifacts_path: PCem-vNext-Windows-MINGW64-${{ github.run_number }}-${{ github.sha }}.zip
@@ -51,14 +51,16 @@ jobs:
                           base-devel
                           zip
                           unzip
-                          mingw-w64-x86_64-ntldd-git
+                          mingw-w64-x86_64-clang
+                          mingw-w64-clang-x86_64-toolchain
+                          mingw-w64-clang-x86_64-ntldd-git
                           mingw-w64-x86_64-toolchain
-                          mingw-w64-x86_64-SDL2
-                          mingw-w64-x86_64-openal
-                          mingw-w64-x86_64-wxwidgets3.2-msw
-                          mingw-w64-x86_64-cmake
-                          mingw-w64-x86_64-libpcap
-                          mingw-w64-x86_64-ninja
+                          mingw-w64-clang-x86_64-SDL2
+                          mingw-w64-clang-x86_64-openal
+                          mingw-w64-clang-x86_64-wxwidgets3.2-msw
+                          mingw-w64-clang-x86_64-cmake
+                          mingw-w64-clang-x86_64-libpcap
+                          mingw-w64-clang-x86_64-ninja
         runs-on: ${{ matrix.os }}
         name: ${{ matrix.name }}
 
