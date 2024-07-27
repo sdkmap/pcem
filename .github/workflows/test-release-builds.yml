@@ -44,7 +44,7 @@ jobs:
                     - name: Windows 64bits (MSYS2)
                       os: windows-latest
                       compiler: CLANG64
-                      args: -DUSE_EXPERIMENTAL=ON -march=native -mtune=native -O3 -flto=auto -DUSE_EXPERIMENTAL_PRINTER=OFF -DUSE_EXPERIMENTAL_PGC=ON -DUSE_NETWORKING=OFF -DUSE_PCAP_NETWORKING=ON -DCMAKE_BUILD_TYPE=Release -DPCEM_VERSION_STRING="vNext build ${GITHUB_SHA::8}"
+                      args: -DUSE_EXPERIMENTAL=ON -march=native -mtune=native -O3 -DUSE_EXPERIMENTAL_PRINTER=OFF -DUSE_EXPERIMENTAL_PGC=ON -DUSE_NETWORKING=OFF -DUSE_PCAP_NETWORKING=ON -DCMAKE_BUILD_TYPE=Release -DPCEM_VERSION_STRING="vNext build ${GITHUB_SHA::8}"
                       artifacts_name: PCem-vNext-Windows-MINGW64-${{ github.run_number }}
                       artifacts_path: PCem-vNext-Windows-MINGW64-${{ github.run_number }}-${{ github.sha }}.zip
                       installdeps: >-
